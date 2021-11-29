@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="stylesheet" href="{{ '/css/prism-night-owl.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ '/img/favicon.png' | url }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+  </head>
+  <body>
+    <header>
+      <h1 class="header-navigation__home-link"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+
+        {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+        <ul class="header-navigation">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <li class="header-navigation__item{% if entry.url == page.url %} header-navigation__item--active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+        {%- endfor %}
+        </ul>
+        <input class="darkmode-toggle" type="checkbox" id="darkmode" />
+        <label class="darkmode-toggle__label" for="darkmode">Toggle Darkmode</label>
+    </header>
+
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+
+      {{ content | safe }}
+    </main>
+
+    <footer>
+      <a href="https://github.com/jesperorb">GitHub</a>
+      <a href="https://www.linkedin.com/in/jesper-orb/">LinkedIn</a>
+    </footer>
+
+    <!-- Current page: {{ page.url | url }} -->
+    <script>
+    const darkModeToggle = document.querySelector(".darkmode-toggle");
+    const savedDarkMode = localStorage.getItem("darkmode");
+    if(Boolean(savedDarkMode)) {
+        darkModeToggle.checked = true;
+        document.body.classList.add("dark")
+    }
+
+    darkModeToggle.addEventListener("click", (event) => {
+        if(event.target.checked) {
+          localStorage.setItem("darkmode", "1");
+          document.body.classList.add("dark")
+        } else {
+          localStorage.clear();
+          document.body.classList.remove("dark");
+        }
+      })
+    </script>
+  </body>
+</html>

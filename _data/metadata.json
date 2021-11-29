@@ -1,0 +1,21 @@
+{
+  "title": "Jesper Orb",
+  "url": "https://jesperorb.com/",
+  "language": "en",
+  "description": "I create advanced websites for a living. I call myself a Front End Developer.",
+  "feed": {
+    "subtitle": "I create advanced websites for a living. I call myself a Front End Developer.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://jesperorb.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://jesperorb.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Jesper Orb",
+    "email": "hej@jesperorb.com",
+    "url": "https://jesperorb.com"
+  }
+}
