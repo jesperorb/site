@@ -23,15 +23,6 @@
   --background: var(--white);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-primary: var(--white);
-    --text-secondary: var(--gray-200);
-    --text-accent: var(--pink);
-    --background: var(--black);
-  }
-}
-
 .dark {
   --text-primary: var(--white);
   --text-secondary: var(--gray-200);

@@ -9,7 +9,7 @@ layout: post
 
 {% callout "info", "What you'll learn" %}
 
-- Using [TypeScript Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+- Using **TypeScript Mapped Types**
 - Mapping and combining literal union types
 
 {% endcallout %}

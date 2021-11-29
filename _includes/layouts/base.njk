@@ -42,7 +42,10 @@
     <script>
     const darkModeToggle = document.querySelector(".darkmode-toggle");
     const savedDarkMode = localStorage.getItem("darkmode");
-    if(Boolean(savedDarkMode)) {
+    const prefersDarkMode = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if(Boolean(savedDarkMode) || prefersDarkMode) {
         darkModeToggle.checked = true;
         document.body.classList.add("dark")
     }
