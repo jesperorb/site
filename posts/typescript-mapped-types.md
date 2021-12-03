@@ -21,7 +21,7 @@ Many developers use some kind of color palette for handling all available colors
 - A set of base colors: _red_, _green_, ...
 - A set of variations: _100_, _200_, ...
 
-How do we go about defining these variations in TypeScript as **one literal type union without having to write every possible combination**?. We want the outcome like below:
+How do we go about defining these variations in TypeScript as **one literal type union without having to write every possible combination**? We want the outcome like below:
 
 ```ts
 type ColorPalette = "red-100" | "red-200" | "blue-100" | "blue-200";
