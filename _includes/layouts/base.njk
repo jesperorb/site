@@ -28,7 +28,7 @@
         {%- endfor %}
         </ul>
         <input class="darkmode-toggle" type="checkbox" id="darkmode" />
-        <label class="darkmode-toggle__label" for="darkmode">Toggle Darkmode</label>
+        <label class="darkmode-toggle__label" for="darkmode">Darkmode</label>
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
@@ -44,11 +44,12 @@
     <!-- Current page: {{ page.url | url }} -->
     <script>
     const darkModeToggle = document.querySelector(".darkmode-toggle");
-    const savedDarkMode = localStorage.getItem("darkmode");
+    const storedDarkModeValue = localStorage.getItem("darkmode");
+    const darkModeValue = Boolean(Number(storedDarkModeValue))
+    const hasSetLightModeManually = storedDarkModeValue !== null && !darkModeValue;
     const prefersDarkMode = window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if(Boolean(savedDarkMode) || prefersDarkMode) {
+    if(darkModeValue || (prefersDarkMode && !hasSetLightModeManually)) {
         darkModeToggle.checked = true;
         document.body.classList.add("dark")
     }
@@ -58,7 +59,7 @@
           localStorage.setItem("darkmode", "1");
           document.body.classList.add("dark")
         } else {
-          localStorage.clear();
+          localStorage.setItem("darkmode", "0");
           document.body.classList.remove("dark");
         }
       })
