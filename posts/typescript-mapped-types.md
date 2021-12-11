@@ -27,7 +27,21 @@ How do we go about defining these variations in TypeScript as **one literal type
 type ColorPalette = "red-100" | "red-200" | "blue-100" | "blue-200";
 ```
 
-## Solution
+## Easy solution
+
+Luckily TypeScript already has this behavior built in. We can use [**Template Literal Types**](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) to iterate every scenario:
+
+```ts
+type BaseColors = "red" | "green";
+type ColorVariations = "100" | "200";
+type ColorPalette = `${BaseColors}-${ColorVariations}`;
+```
+
+The solution above will generate a type with every combination.
+
+## The hard way
+
+But for the sake of learning let go through how we can manually recreate this behavior using Mapped Types. And because this is the original way I did it before I figured out it is already built in 😅.
 
 We can start by defining our colors as one literal type union:
 
