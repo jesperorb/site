@@ -41,6 +41,18 @@
   border: 1px solid var(--black);
 }
 
+.post__tag--JavaScript {
+  background-color: rgb(232, 215, 59);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.post__tag--Svelte {
+  background-color: rgb(214, 62, 8);
+  color: var(--white);
+  border: 1px solid var(--black);
+}
+
 a[href].post__tag:hover,
 a[href].post__tag:focus {
   filter: brightness(130%);
