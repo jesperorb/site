@@ -21,7 +21,7 @@ I found that it was a bit hard to get an overview of what can be done with this 
 
 To solve this I built a tool to explore all possible methods and options for these methods: **[Intl Explorer](https://jesperorb.github.io/intl-explorer/)**
 
-For each method under the Intl-APi you can specify a locale to use and depending on the method, some extra options to pass to the method.
+For each method under the Intl-API you can specify a locale to use and depending on the method, some extra options to pass to the method.
 
 It will then display each possible option with the outcome of the option. For easier access there is also a "Copy" button for each possible option that copies the code used to your clipboard, for example:
 
