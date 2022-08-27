@@ -6,10 +6,9 @@
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     {% if 'posts' in page.url %}
-    <link rel="stylesheet" href="{{ '/css/prism-night-owl.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/posts.css' | url }}">
+      <link rel="stylesheet" href="{{ '/css/prism-night-owl.css' | url }}">
+      <link rel="stylesheet" href="{{ '/css/posts.css' | url }}">
     {% endif %}
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script>
@@ -28,53 +27,186 @@
     <link rel="icon" href="{{ '/img/favicon.png' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+    <style>
+      :root {
+          --black: hsl(290, 5%, 5%);
+          --white: hsl(0, 0%, 100%);
+          --gray-light: hsl(0, 0%, 90%);
+          --gray-100: hsl(0, 0%, 75%);
+          --gray-200: hsl(290, 5%, 70%);
+          --gray-300: hsl(290, 5%, 35%);
+          --red: hsl(0, 95%, 20%);
+          --green: hsl(130, 95%, 20%);
+          --blue: hsl(207, 95%, 20%);
+          --pink: hsl(276, 68%, 75%);
+          --purple: hsl(276, 68%, 45%);
+          --line-height: 1.5;
+          --font-size: 1.125rem;
+          --page-width: 38rem;
+          --default-margin: 1.5rem;
+          --text-primary: var(--black);
+          --text-secondary: var(--gray-300);
+          --text-accent: var(--purple);
+          --background: var(--white);
+        }
+        .dark {
+          --text-primary: var(--white);
+          --text-secondary: var(--gray-200);
+          --text-accent: var(--pink);
+          --background: var(--black);
+        }
+        *,
+        *::after,
+        *::before {
+          box-sizing: border-box;
+        }
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: "Lora", serif;
+          color: var(--text-primary);
+          background-color: var(--background);
+          line-height: var(--line-height);
+          font-size: 100%;
+        }
+        p, li {
+          font-size: var(--font-size);
+        }
+        p {
+          margin-top: 0;
+          margin-bottom: var(--default-margin);
+        }
+
+        ol,
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin-top: 0;
+          margin-bottom: var(--default-margin);
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        h4 {
+          font-size: 1.5rem;
+        }
+
+        h5 {
+          font-size: 1.25rem;
+        }
+
+        h6 {
+          font-size: 1rem;
+        }
+        a,
+        a:visited:not(.post__tag) {
+          color: var(--text-primary);
+        }
+        .template--post a:not(.post__tag),
+        .template--post a:visited:not(.post__tag) {
+          color: var(--text-accent);
+        }
+        time {
+          letter-spacing: 0.04rem;
+          color: var(--text-secondary);
+        }
+        header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 4rem;
+          border-bottom: 1px dashed var(--gray-100);
+        }
+        main {
+          height: 100%;
+          min-height: calc(100vh - 8rem);
+          padding-top: 3rem;
+        }
+        .template--post,
+        .template--posts,
+        .template--home {
+          margin: 0 1rem;
+        }
+        @media screen and (min-width: 50rem) {
+          .template--post,
+          .template--posts,
+          .template--home {
+            max-width: var(--page-width);
+            margin: auto;
+          }
+        }
+        footer {
+          border-top: 1px dashed var(--gray-100);
+          height: 4rem;
+          gap: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .header-navigation {
+          margin-left: auto;
+        }
+        .header-navigation__item {
+          display: inline-block;
+          margin-right: 1em;
+          text-transform: lowercase;
+          letter-spacing: 0.08rem;
+        }
+        .header-navigation__home-link {
+          text-transform: lowercase;
+          float: left;
+          font-size: 1rem;
+          margin: 0 0 0 1rem;
+        }
+        .header-navigation__home-link a {
+          text-decoration: none;
+        }
+        .header-navigation__item--active {
+          font-weight: 700;
+          text-decoration: underline;
+        }
+    </style>
   </head>
   <body>
     <header>
       <h1 class="header-navigation__home-link"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
-
-        {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
         <ul class="header-navigation">
         {%- for entry in collections.all | eleventyNavigation %}
           <li class="header-navigation__item{% if entry.url == page.url %} header-navigation__item--active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
         {%- endfor %}
         </ul>
-        <input class="darkmode-toggle" type="checkbox" id="darkmode" />
-        <label class="darkmode-toggle__label" for="darkmode">Darkmode</label>
     </header>
-
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-
       {{ content | safe }}
     </main>
-
     <footer>
       <a target="_blank" rel="noopener noreferrer" href="https://github.com/jesperorb">GitHub</a>
       <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jesper-orb/">LinkedIn</a>
     </footer>
-
-    <!-- Current page: {{ page.url | url }} -->
     <script>
-    const darkModeToggle = document.querySelector(".darkmode-toggle");
-    const storedDarkModeValue = localStorage.getItem("darkmode");
-    const darkModeValue = Boolean(Number(storedDarkModeValue))
-    const hasSetLightModeManually = storedDarkModeValue !== null && !darkModeValue;
-    const prefersDarkMode = window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if(darkModeValue || (prefersDarkMode && !hasSetLightModeManually)) {
-        darkModeToggle.checked = true;
-        document.body.classList.add("dark")
-    }
-
-    darkModeToggle.addEventListener("click", (event) => {
-        if(event.target.checked) {
-          localStorage.setItem("darkmode", "1");
-          document.body.classList.add("dark")
-        } else {
-          localStorage.setItem("darkmode", "0");
-          document.body.classList.remove("dark");
-        }
-      })
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const newColorScheme = e.matches ? "dark" : "light";
+        document.body.classList.add(newColorScheme);
+      });
     </script>
   </body>
 </html>
