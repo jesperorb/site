@@ -35,6 +35,14 @@
         const newColorScheme = e.matches ? "dark" : "light";
         document.body.classList.add(newColorScheme);
       });
+      console.group("%c Kajit has wares if you have coin ", "font-size:2rem;color:white;background-color:rgb(10,10,10);")
+      console.table([
+        { item: "Easter Egg", cost: 0 },
+        { item: "Fix your router", cost: -Infinity },
+        { item: "Configure your .eslintrc", cost: "10 000 000 SEK/hour" },
+        { item: "Magical frog", cost: "Free to a good home" }
+      ])
+      console.groupEnd()
     </script>
   </body>
 </html>
