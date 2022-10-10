@@ -39,8 +39,7 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
+  font-size: var(--font-size);
   font-family: var(--system-font);
   color: var(--text-primary);
   background-color: var(--background);
@@ -49,17 +48,11 @@ body {
 }
 
 p {
-  font-size: var(--font-size);
   margin-top: 0;
   margin-bottom: var(--default-margin);
 }
 
-li {
-  font-size: var(--font-size);
-}
-
-ol,
-ul {
+html, body, ul, ol {
   padding: 0;
   margin: 0;
 }
@@ -127,15 +120,11 @@ main {
   padding-top: 3rem;
 }
 
-.template--post,
-.template--posts,
 .template--home {
   margin: 0 1rem;
 }
 
 @media screen and (min-width: 50rem) {
-  .template--post,
-  .template--posts,
   .template--home {
     max-width: var(--page-width);
     margin: auto;
@@ -151,21 +140,21 @@ footer {
   align-items: center;
 }
 
-/* Header navigation */
-
 .header-navigation {
   margin-left: auto;
+}
+
+.header-navigation__item, .header-navigation__home-link {
+  text-transform: lowercase;
 }
 
 .header-navigation__item {
   display: inline-block;
   margin-right: 1em;
-  text-transform: lowercase;
   letter-spacing: 0.08rem;
 }
 
 .header-navigation__home-link {
-  text-transform: lowercase;
   float: left;
   font-size: 1rem;
   margin: 0 0 0 1rem;

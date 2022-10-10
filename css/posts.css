@@ -1,4 +1,14 @@
-/* Posts */
+.template--post,
+.template--posts {
+  margin: 0 1rem;
+}
+@media screen and (min-width: 50rem) {
+  .template--post,
+  .template--posts {
+    max-width: var(--page-width);
+    margin: auto;
+  }
+}
 .post {
   display: flex;
   flex-direction: column;
