@@ -1,17 +1,29 @@
 ---
-title: Stockholm - Uppsala Travel Info
+title: Stockholm - Uppsala Commuter Info
 description: Building a PWA that displays trafic info for trains between Stockholm and Uppsala.
-date: 2022-08-28
+date: 2023-04-10
 tags:
   - TypeScript
   - Svelte
+  - Trafikverket API
 layout: post
 ---
 
-This spring I started to commute a bit between Stockholm and Uppsala. As this section of railway is notoriously riddled with delays and cancelled trains I wanted an app that displays the trafic info for the trains running (or not running).
+## Intro 
+Last spring I started commuting between Stockholm and Uppsala. To be able to see info more clearly about departures I built a small PWA that can be "installed" as a bookmark on your phone.
 
-So I built small site for it: **[Sthlm-Uppsala](https://sthlm-uppsala.vercel.app/)**.
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1rem">
+  <img src="{{ '/img/sthlm-uppsala.png' | url }}" style="max-height: 500px;" alt="Screenshot of how the application looks like" />
+</div>
 
-It features a refresh button so you can easily get the lastest info and a button to change the direction. It also has a checkbox so you can toggle to only display trains that run on the commuter card "Movingo".
+**[Live site: sthlm-uppsala.vercel.app](https://sthlm-uppsala.vercel.app/)**.
+
+## Features
+
+- Easily reachable refresh button
+- Easily reachable "Swap destination-origin" button
+- Filter by "Only Movingo"
+- Two layout modes: dense and normal (dense for smaller phones)
+- Ability to select departure date and time freely
 
 The app is built with Svelte and TypeScript.
