@@ -1,7 +1,8 @@
 {
-  "name": "site",
-  "version": "1",
+  "name": "jesperorb.com",
+  "version": "1.0.0",
   "description": "My personal site",
+  "type": "module",
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --watch",
@@ -11,17 +12,17 @@
   },
   "author": {
     "name": "Jesper Orb",
-    "email": "hej@jesperorb.com",
+    "email": "hello@jesperorb.com",
     "url": "https://jesperorb.com/"
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "luxon": "^3.4.4",
-    "markdown-it": "^14.0.0",
-    "markdown-it-anchor": "^8.6.7"
+    "luxon": "^3.5.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
   }
 }
