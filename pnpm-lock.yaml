@@ -20,9 +20,6 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ^5.0.0
         version: 5.0.0
-      luxon:
-        specifier: ^3.5.0
-        version: 3.5.0
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0

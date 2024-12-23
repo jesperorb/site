@@ -1,4 +1,3 @@
-import { DateTime } from "luxon";
 import fs from "fs";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
@@ -21,13 +20,24 @@ export default function (
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("DDDD");
+  eleventyConfig.addFilter("readableDate", (date) => {
+    return date.toLocaleString(undefined, {
+      dateStyle: "full"
+    })
+  });
+
+  eleventyConfig.addFilter("shortMonth", (date) => {
+    return new Date(date).toLocaleDateString(undefined, {
+      month: "short",
+      year: "numeric"
+    });
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  eleventyConfig.addFilter("htmlDateString", (date) => {
+    return new Date(date).toLocaleDateString(undefined, {
+      dateStyle: "short"
+    });
   });
 
   eleventyConfig.addPairedShortcode("callout", (content, type, title) => {
