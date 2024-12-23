@@ -111,13 +111,13 @@ a[href].post__direct-link:focus:visited,
 }
 
 .callout--success {
-  background-color: rgb(241, 253, 249);
-  border-left: 4px solid rgb(0, 191, 136);
+  background-color: var(--card-green);
+  border-left: 4px solid var(--card-green-2);
 }
 
 .callout--info {
-  background-color: #eef9fd;
-  border-left: 4px solid#4cb3d4;
+  background-color: var(--card-blue);
+  border-left: 4px solid var(--card-blue-2);
 }
 
 /** CODE AND CODE HIGHLIGHTING */
