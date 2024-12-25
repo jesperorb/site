@@ -6,6 +6,11 @@ eleventyNavigation:
   order: 1
 ---
 
+{% set css %} {% include "css/resume.css" %} {% endset %}
+<style>
+	{{ css | cssmin | safe }}
+</style>
+
 <div class="timeline">
   {%- for position in resume -%}
   <div class="timeline__date">{{ position.date | shortMonth }}</div>

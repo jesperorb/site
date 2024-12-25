@@ -16,6 +16,12 @@ eleventyComputed:
   title: Tagged “{{ tag }}”
 
 ---
+
+{% set css %} {% include "css/posts.css" %} {% endset %}
+<style>
+	{{ css | cssmin | safe }}
+</style>
+
 <h1>Tagged “{{ tag }}”</h1>
 
 {% set postslist = collections[ tag ] %}

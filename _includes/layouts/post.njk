@@ -1,7 +1,13 @@
 ---
 layout: base
-templateClass: template--post
 ---
+
+{% set postCss %} {% include "css/post.css" %} {% endset %}
+{% set postsCss %} {% include "css/posts.css" %} {% endset %}
+<style>
+	{{ postCss | cssmin | safe }}
+	{{ postsCss | cssmin | safe }}
+</style>
 
 <div class="post__metadata">
   <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>

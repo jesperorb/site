@@ -6,6 +6,12 @@ pagination:
   size: 20
   alias: entries
 ---
+
+{% set css %} {% include "css/posts.css" %} {% endset %}
+<style>
+	{{ css | cssmin | safe }}
+</style>
+
 <table>
   <thead>
     <tr>

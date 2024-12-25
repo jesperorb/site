@@ -1,0 +1,185 @@
+:root {
+  --system-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --black: hsl(290, 5%, 5%);
+  --white: hsl(0, 0%, 100%);
+  --gray-light: hsl(0, 0%, 90%);
+  --gray-100: hsl(0, 0%, 75%);
+  --gray-200: hsl(290, 5%, 70%);
+  --gray-300: hsl(290, 5%, 35%);
+  --red: hsl(0, 95%, 20%);
+  --green: hsl(130, 95%, 20%);
+  --blue: hsl(207, 95%, 20%);
+  --pink: hsl(276, 68%, 75%);
+  --purple: hsl(276, 68%, 45%);
+
+  /* RESUME COLORS */
+
+  --card-green: hsl(160, 75%, 97%);
+  --card-green-2: hsl(160, 100%, 40%);
+  --card-green-3: hsl(160, 100%, 30%);
+  --card-green-shadow: hsla(160, 100%, 40%, 0.1);
+
+  --card-blue: hsl(196, 79%, 96%);
+  --card-blue-2:hsl(195, 61%, 56%);
+  --card-blue-3: hsl(195, 61%, 40%);
+  --card-blue-shadow: hsl(195, 61%, 40%, 0.1);
+
+  --line-height: 1.5;
+  --font-size: 1.125rem;
+
+  --page-width: 45rem;
+  --default-margin: 1.5rem;
+
+  --text-primary: var(--black);
+  --text-secondary: var(--gray-300);
+  --text-accent: var(--purple);
+  --background: var(--white);
+}
+
+.dark {
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-200);
+  --text-accent: var(--pink);
+  --background: var(--black);
+
+  --card-green: hsl(160, 45%, 20%);
+  --card-green-shadow: hsla(160, 100%, 70%, 0.1);
+
+  --card-blue: hsl(195, 45%, 20%);
+  --card-blue-shadow: hsl(195, 61%, 70%, 0.1);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  font-family: var(--system-font);
+  color: var(--text-primary);
+  background-color: var(--background);
+  line-height: var(--line-height);
+  font-size: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--default-margin);
+}
+
+html, body, ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--default-margin);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a,
+a:visited:not(.post__tag) {
+  color: var(--text-primary);
+}
+
+time {
+  letter-spacing: 0.04rem;
+  color: var(--text-secondary);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  border-bottom: 1px dashed var(--gray-100);
+}
+
+main {
+  height: 100%;
+  min-height: calc(100vh - 8rem);
+  padding-top: 3rem;
+  margin: 0 1rem;
+  padding-bottom: 3rem;
+}
+
+@media screen and (min-width: 50rem) {
+  main {
+    max-width: var(--page-width);
+    margin: auto;
+  }
+}
+
+footer {
+  border-top: 1px dashed var(--gray-100);
+  height: 4rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-navigation {
+  margin-left: auto;
+}
+
+.header-navigation__item, .header-navigation__home-link {
+  text-transform: lowercase;
+}
+
+.header-navigation__item {
+  display: inline-block;
+  margin-right: 1em;
+  letter-spacing: 0.08rem;
+}
+
+.header-navigation__home-link {
+  float: left;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+}
+
+.header-navigation__home-link a {
+  text-decoration: none;
+}
+
+.header-navigation__item--active {
+  font-weight: 700;
+  text-decoration: underline;
+}
