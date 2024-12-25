@@ -11,11 +11,11 @@ export const getMarkdownPlugin = (
     breaks: true,
     linkify: true,
   }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
-      class: "post__direct-link",
-      symbol: "#",
-      level: [1, 2, 3, 4],
+    permalink: markdownItAnchor.permalink.linkAfterHeader({
+      style: 'visually-hidden',
+      assistiveText: title => `Permalink to “${title}”`,
+      visuallyHiddenClass: 'visually-hidden',
+      wrapper: ['<div class="title-wrapper">', '</div>']
     }),
     slugify: eleventyConfig.getFilter("slug"),
   });

@@ -36,86 +36,6 @@
   border-left: 4px solid var(--card-blue-2);
 }
 
-/** CODE AND CODE HIGHLIGHTING */
-
-pre,
-code {
-  font-family: Consolas, Menlo, Monaco, Courier, monospace;
-  line-height: var(--line-height);
-  border-radius: 0.5rem;
-}
-
-code {
-  word-break: break-all;
-}
-
-pre {
-  line-height: var(--line-height);
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-code:not([class*="language-"]) {
-  color: var(--black);
-  font-size: 1rem;
-  padding: 0.1rem 0.2rem;
-  border-radius: 0.25rem;
-  background-color: var(--gray-light);
-}
-
-pre[class*="language-"] {
-  font-size: 0.875rem;
-  margin-bottom: var(--default-margin);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-}
-
-.highlight-line {
-  display: block;
-  text-decoration: none; /* override del, ins, mark defaults */
-  color: inherit; /* override del, ins, mark defaults */
-}
-
-/* allow highlighting empty lines */
-.highlight-line:empty:before {
-  content: " ";
-}
-
-/* avoid double line breaks when using display: block; */
-.highlight-line + br {
-  display: none;
-}
-
-.highlight-line-isdir {
-  color: var(--gray-100);
-  background-color: var(--text-secondary);
-}
-
-.highlight-line-active {
-  background-color: var(--blue);
-}
-
-.highlight-line-add {
-  background-color: var(--green);
-}
-
-.highlight-line-remove {
-  background-color: var(--red);
-}
-
-.token.comment {
-  color: var(--gray-200);
-}
-
 /**
  * MIT License
  * Copyright (c) 2018 Sarah Drasner
@@ -274,3 +194,85 @@ pre[class*="language-"] {
  .token.italic {
    font-style: italic;
  }
+
+
+
+/** CODE AND CODE HIGHLIGHTING OVERRIDES */
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, Courier, monospace;
+  line-height: var(--line-height);
+  border-radius: 0.5rem;
+}
+
+code {
+  word-break: break-all;
+}
+
+pre {
+  line-height: var(--line-height);
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code:not([class*="language-"]) {
+  color: var(--black);
+  font-size: 1rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.25rem;
+  background-color: var(--gray-light);
+}
+
+pre[class*="language-"] {
+  font-size: 0.875rem;
+  margin-bottom: var(--default-margin);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.highlight-line {
+  display: block;
+  text-decoration: none; /* override del, ins, mark defaults */
+  color: inherit; /* override del, ins, mark defaults */
+}
+
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: " ";
+}
+
+/* avoid double line breaks when using display: block; */
+.highlight-line + br {
+  display: none;
+}
+
+.highlight-line-isdir {
+  color: var(--gray-100);
+  background-color: var(--text-secondary);
+}
+
+.highlight-line-active {
+  background-color: var(--blue);
+}
+
+.highlight-line-add {
+  background-color: var(--green);
+}
+
+.highlight-line-remove {
+  background-color: var(--red);
+}
+
+.token.comment {
+  color: var(--gray-200);
+}
