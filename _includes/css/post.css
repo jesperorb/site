@@ -21,11 +21,6 @@
   margin-bottom: 0.5rem;
 }
 
-.callout ul {
-  margin-left: 2rem;
-  margin-bottom: 0rem;
-}
-
 .callout--success {
   background-color: var(--card-green);
   border-left: 4px solid var(--card-green-2);
