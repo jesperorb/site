@@ -170,7 +170,7 @@
 @media screen and (min-width: 40rem) {
   .timeline__content {
     min-height: 7.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
   }
 
   .content__back img {
