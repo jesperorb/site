@@ -2,41 +2,50 @@
   {
     "date": "2024-12-12",
     "title": "Enterprise Agile Estimator",
-    "description": "Fibonacci, t-shirt, points, price, kelvin, old macedonian imperial inches. Anything but time, I have it."
+    "description": "Fibonacci, t-shirt, points, price, kelvin, old macedonian imperial inches. Anything but time, I have it.",
+    "image": "/img/resume/jira.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating a Jira Avatar with a court jester hat"
   },
   {
     "date": "2024-12-02",
     "title": "Junior Java Spring Boot Annotator",
-    "description": "I can safely say that I can annotate anything."
+    "description": "I can safely say that I can annotate anything.",
+    "image": "/img/resume/java-beans.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating a coffee cup with coffee beans as it's background"
   },
   {
     "date": "2024-09-02",
     "title": "Mid Pipelines Guesser",
-    "description": "<hash>: trigger pipeline <hash>: trigger pipeline <hash>: trigger pipeline <hash>: trigger pipeline"
+    "description": "<hash>: trigger pipeline <hash>: trigger pipeline <hash>: trigger pipeline <hash>: trigger pipeline",
+    "image": "/img/resume/azure-pipeline.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating an Azure Pipeline terminal output where the task being processed is called 'Joker' and exists with exit code 1"
   },
   {
     "date": "2024-06-02",
     "title": "Senior TypeScript Overabstractionist",
-    "description": "Everything is better with generics? No?"
+    "description": "Everything is better with generics? No?",
+    "image": "/img/resume/abstract-ts.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating the painting 'Composition 2' by Piet Mondriaan hanging in a gallery but the painting has 'TS' written on it"
   },
   {
     "date": "2024-01-12",
     "title": "Eternal Needless Automator",
-    "description": "I have successfully spent twice the amount of time than it saves me to automate this"
+    "description": "I have successfully spent twice the amount of time than it saves me to automate this",
+    "image": "/img/resume/eternal-automator.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating an a factory with a conveyor belt producing boxes with the eternity symbol on them"
   },
   {
     "date": "2023-10-02",
     "title": "Expert \"Task without description\" creator",
-    "description": "I hope this task isn't two stories in a trenchcoat"
+    "description": "I hope this task isn't two stories in a trenchcoat",
+    "image": "/img/resume/subtask.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating a brown trenchcoat with two Jira Subtask icons hidden inside of it"
   },
   {
     "date": "2023-08-02",
     "title": "Senior E2E Test Results Ignorer",
-    "description": "The environments are just a little bit shaky, it will stabilize next time for sure"
-  },
-  {
-    "date": "2022-07-20",
-    "title": "Certified Shadow Backlog Enabler",
-    "description": "This refactor is so small we don't even need to track work"
+    "description": "The environments are just a little bit shaky, it will stabilize next time for sure",
+    "image": "/img/resume/test-result.png",
+    "imageAlt": "A playing card in the style of the game Balatro illustrating a test result output from the test framework Playwright where all tests are noted as being flaky"
   }
 ]

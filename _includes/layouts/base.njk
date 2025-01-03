@@ -12,6 +12,7 @@
     <style>
       {{ css | cssmin | safe }}
     </style>
+    <script defer src="https://umami-xi-eosin.vercel.app/script.js" data-website-id="08216b93-93e9-418f-a784-863e2c3a358e"></script>
   </head>
   <body>
     <header>
@@ -34,12 +35,13 @@
         const newColorScheme = e.matches ? "dark" : "light";
         document.body.classList.add(newColorScheme);
       });
-      console.group("%c Kajit has wares if you have coin ", "font-size:2rem;color:white;background-color:rgb(10,10,10);")
+      console.group("%c Try clicking the cards in the resume for another easter egg. While you are here traveler, do you need something? ", "font-size:1.25rem;color");
       console.table([
         { item: "Easter Egg", cost: 0 },
         { item: "Fix your router", cost: -Infinity },
         { item: "Configure your .eslintrc", cost: "10 000 000 SEK/hour" },
-        { item: "Magical frog", cost: "Free to a good home" }
+        { item: "My strongest potion", cost: "Not for sale" },
+        { item: "Magical frog", cost: "Free to a good home" },
       ])
       console.groupEnd()
     </script>

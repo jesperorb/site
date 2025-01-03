@@ -11,13 +11,39 @@ eleventyNavigation:
 	{{ css | cssmin | safe }}
 </style>
 
-<div class="timeline">
+<h1 class="title">Resume timeline</h1>
+
+<div class="timeline" aria-hidden="true">
   {%- for position in resume -%}
   <div class="timeline__date">{{ position.date | shortMonth }}</div>
   <div class="timeline__separator"></div>
-  <div class="timeline__content">
-    <h2 class="timeline__title">{{ position.title }}</h2>
-    <p class="timeline__description">{{ position.description }}</p>
-  </div>
+  <button class="timeline__content" tabindex="-1">
+    <div class="content__inner">
+      <div class="content__front">
+        <h2 class="content__title">{{ position.title }}</h2>
+        <p class="content__description">{{ position.description }}</p>
+      </div>
+      <div class="content__back">
+        <img src="{{ position.image | url }}" eleventy:ignore alt="{{ position.imageAlt }}" />
+      </div>
+    </div>
+  </button>
   {%- endfor -%}
 </div>
+
+{%- for position in resume -%}
+<div class="visually-hidden">
+  <h2>{{ position.title }}</h2>
+  <p>{{ position.date | shortMonth }}</p>
+  <p>{{ position.description }}</p>
+  <img src="{{ position.image | url }}" eleventy:ignore alt="{{ position.imageAlt }}" />
+</div>
+{%- endfor -%}
+
+<script>
+  document.querySelectorAll(".timeline__content").forEach(timelineContent => {
+    timelineContent.addEventListener("click", function(event) {
+      this.firstElementChild.classList.toggle("content__inner--active");
+    })
+  })
+</script>
