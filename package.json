@@ -1,7 +1,7 @@
 {
   "name": "jesperorb.com",
   "version": "1.0.0",
-  "description": "My personal site",
+  "description": "Personal work site",
   "type": "module",
   "scripts": {
     "build": "eleventy",
@@ -12,7 +12,7 @@
   },
   "author": {
     "name": "Jesper Orb",
-    "email": "hello@jesperorb.com",
+    "email": "work@jesperorb.com",
     "url": "https://jesperorb.com/"
   },
   "license": "MIT",
