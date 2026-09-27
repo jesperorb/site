@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "jesperorb-site",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "./_site",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "jesperorb.com", "custom_domain": true },
+    { "pattern": "www.jesperorb.com", "custom_domain": true }
+  ]
+}

@@ -5,3 +5,7 @@ package-lock.json
 
 # Local Netlify folder
 .netlify
+
+# Local Wrangler/Cloudflare folder
+.wrangler
+.dev.vars

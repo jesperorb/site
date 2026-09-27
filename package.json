@@ -8,7 +8,9 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "cf:dev": "eleventy && wrangler dev",
+    "cf:deploy": "eleventy && wrangler deploy"
   },
   "author": {
     "name": "Jesper Orb",
@@ -22,7 +24,8 @@
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.2.0"
+    "markdown-it-anchor": "^9.2.0",
+    "wrangler": "^4.140.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^5.0.0",
